@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { Link } from 'react-router-dom';
 
-const Home = () => {
+const Home = ({ count, setCount }) => {
     const [products, setProducts] = useState({})
 
 
@@ -14,6 +14,11 @@ const Home = () => {
                 setProducts(result)
             });
     }, [])
+
+    // add to card
+    const addToCard = () => {
+        setCount(count + 1)
+    }
     return (
         <div className="home container mx-auto mt-7  flex flex-wrap justify-center gap-5">
             {
@@ -34,7 +39,9 @@ const Home = () => {
                                 <button className="bg-orange-600 p-2 mt-5 text-black rounded-md">
                                     <Link to={`product/${product.id}`}>show more</Link>
                                 </button>
-                                <button className="bg-blue-400 p-2 mt-5 text-black rounded-md">
+                                <button
+                                    onClick={addToCard}
+                                    className="bg-blue-400 p-2 mt-5 text-black rounded-md">
                                     <MdOutlineAddShoppingCart size={25} />
                                 </button>
 

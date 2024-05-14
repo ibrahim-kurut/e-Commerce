@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import SliderComp from '../compnents/slider/Slider';
 
-const ProductDetails = () => {
+const ProductDetails = ({ count, setCount }) => {
 
 
   const { id } = useParams()
@@ -18,7 +18,11 @@ const ProductDetails = () => {
         setProduct(result)
       });
   }, [id])
+  // add to card
+  const addToCard = () => {
+    setCount(count + 1)
 
+  }
 
   return (
     <div className="container mx-auto mt-5">
@@ -47,7 +51,9 @@ const ProductDetails = () => {
               <span>{product?.discountPercentage}% off</span>
             </span>
           </p>
-          <button className="bg-blue-400 p-2 mt-5 text-black rounded-md">
+          <button
+            onClick={addToCard}
+            className="bg-blue-400 p-2 mt-5 text-black rounded-md">
             <MdOutlineAddShoppingCart size={25} />
           </button>
 

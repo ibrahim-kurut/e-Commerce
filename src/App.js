@@ -13,7 +13,7 @@ function App() {
       <Header count={count} setCount={setCount} />
       <Routes>
         <Route path="/" element={<Home count={count} setCount={setCount} />} />
-        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/product/:id" element={<ProductDetails count={count} setCount={setCount} />} />
       </Routes>
 
 
