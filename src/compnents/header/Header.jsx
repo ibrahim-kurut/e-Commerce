@@ -3,7 +3,7 @@ import Navbar from './Navbar'
 
 const Header = () => {
     return (
-        <div className="header bg-orange-400 ">
+        <div className="header bg-orange-400 sticky top-0">
             <div className="container mx-auto h-20 flex justify-between items-center">
                 <div className="logo bg-orange-600 px-5 py-1 rounded-lg cursor-pointer">
                     <span className="text-3xl">shop. </span>
