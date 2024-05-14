@@ -1,0 +1,4 @@
+.slick-arrow,
+.slick-prev {
+    display: none !important;
+}

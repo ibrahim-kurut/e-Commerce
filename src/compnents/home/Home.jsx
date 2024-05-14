@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { MdOutlineAddShoppingCart } from "react-icons/md";
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     const [products, setProducts] = useState({})
@@ -9,7 +10,7 @@ const Home = () => {
         fetch('https://dummyjson.com/products')
             .then(res => res.json())
             .then((result) => {
-                console.log(result);
+                // console.log(result);
                 setProducts(result)
             });
     }, [])
@@ -31,7 +32,7 @@ const Home = () => {
                             <p className="card-text">rating: {product.rating}</p>
                             <div className="card-actions flex justify-between">
                                 <button className="bg-orange-600 p-2 mt-5 text-black rounded-md">
-                                    show more
+                                    <Link to={`product/${product.id}`}>show more</Link>
                                 </button>
                                 <button className="bg-blue-400 p-2 mt-5 text-black rounded-md">
                                     <MdOutlineAddShoppingCart size={25} />
