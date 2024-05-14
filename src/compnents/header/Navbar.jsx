@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     return (
-        <nav className="navbar">
+        <nav className="navbar hidden md:block">
             <ul className="flex gap-5 capitalize">
                 <li className="cursor-pointer hover:text-orange-200 text-lg">
                     <Link to="/">home</Link>

@@ -15,12 +15,12 @@ const Home = () => {
             });
     }, [])
     return (
-        <div className="home container mx-auto mt-7 flex flex-wrap justify-center gap-5">
+        <div className="home container mx-auto mt-7  flex flex-wrap justify-center gap-5">
             {
                 products?.products?.map((product) =>
                     <div
                         key={product.id}
-                        className="card w-[25%] border border-orange-400 rounded-lg overflow-hidden h-fit">
+                        className="card w-[50%] md:w-[25%] border border-orange-400 rounded-lg overflow-hidden h-fit">
                         <div className="card-img  h-[50%]">
                             <img
                                 className="h-[100%] mx-auto"
